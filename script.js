@@ -10,24 +10,41 @@ function create_row(empRecord,index) {
     //alert(arrEmpRecord[2]);
     if(arrEmpRecord[2]=='Doctor') {
         //alert("Doc")
-        imagepath='/images/Doc.png'
+        imagepath='/images/Doc.png' 
     }
     else if(arrEmpRecord[2]=='IT') {
         //alert("IT")
-        imagepath='/images/IT.png'
+        imagepath='/images/IT_job.jpg'
     }
     else if(arrEmpRecord[2]=='Lawyer') {
         //alert("IT")
-        imagepath='/images/Lawyer.png'
+        imagepath='/images/Lawyer.jpg'
     }
     else if(arrEmpRecord[2]=='Teacher') {
         //alert("IT")
         imagepath='/images/Teacher.jpg'
     }
+    else if(arrEmpRecord[2]=='Chef') {
+        //alert("IT")
+        imagepath='/images/Chef.jpg'
+    }
+    else if(arrEmpRecord[2]=='Nurse') {
+        //alert("IT")
+        imagepath='/images/Nurse.jpg'
+    }
     else if(arrEmpRecord[2]=='Engineer') {
         //alert("IT")
         imagepath='/images/Engineer.jpg'
     }
+    else if(arrEmpRecord[2]=='Pilot') {
+        //alert("IT")
+        imagepath='/images/Pilot.jpg'
+    }
+    else if(arrEmpRecord[2]=='Police') {
+        //alert("IT")
+        imagepath='/images/Police.jpg'
+    }
+    
     else {
         imagepath='/images/smiley.png'
     }
