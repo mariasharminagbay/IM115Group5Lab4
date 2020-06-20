@@ -16,6 +16,21 @@ function create_row(empRecord,index) {
         //alert("IT")
         imagepath='/images/IT.png'
     }
+    else if(arrEmpRecord[2]=='Lawyer') {
+        //alert("IT")
+        imagepath='/images/Lawyer.png'
+    }
+    else if(arrEmpRecord[2]=='Teacher') {
+        //alert("IT")
+        imagepath='/images/Teacher.jpg'
+    }
+    else if(arrEmpRecord[2]=='Engineer') {
+        //alert("IT")
+        imagepath='/images/Engineer.jpg'
+    }
+    else {
+        imagepath='/images/smiley.png'
+    }
   
     var row = ""
     row += "<tr id='" + index + "'>\n"
