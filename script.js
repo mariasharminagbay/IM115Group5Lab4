@@ -1,4 +1,3 @@
-var people =[];
 var AllEmp = [];
 
 /* function populatetable(){
@@ -15,18 +14,23 @@ var AllEmp = [];
 
 } */
 
-function create_row(FName, LName, Job, Salary) {
+function create_row(empRecord,index) {
 
-    alert(FName, LName, Job, Salary);
+    var arrEmpRecord = [];
+    arrEmpRecord =  empRecord;
+
+    //alert(arrEmpRecord[0]);
+    //alert(arrEmpRecord[1]);
+    
     var row = ""
-    row += "<tr id='" + 1 + "'>\n"
-    row += "<td onclick='remove_employee(" + 1 + ")'>❌</td>\n"
+    row += "<tr id='" + index + "'>\n"
+    row += "<td onclick=index'remove_employee(" + index + ")'>❌</td>\n"
     //<img src='/images/delete.jpg' alt='Delete' style='width:35px;height:30px;'>
-    row += "<td>" + FName + "</td\n>"
-    row += "<td>" + FName + "</td\n>"
-    row += "<td>" + LName + "</td\n>"
-    row += "<td>" + Job + "</td\n>"
-    row += "<td>" + Salary + "</td\n>"
+    row += "<td>" + arrEmpRecord[1] + "</td>\n"
+    row += "<td>" + arrEmpRecord[2] + "</td>\n"
+    row += "<td>" + arrEmpRecord[3] + "</td>\n"
+    row += "<td>" + arrEmpRecord[1] + "</td>\n"
+    row += "<td>" + arrEmpRecord[3] + "</td>\n"
     row += "</tr>"
     alert(row)
     return row
@@ -35,8 +39,14 @@ function create_row(FName, LName, Job, Salary) {
 function refresh_table(){
     alert('HellorefreshTable')
     var code_snippet = ""
-    //for(var index in people)
-      code_snippet += create_row(people[0],people[1],people[2],people[3])
+/*     array.forEach(element => {
+        
+    }); */
+    alert(AllEmp.length);
+    alert(AllEmp[0])
+    for(var i=0; i < AllEmp.length; i++)
+        //alert("for each person: " + AllEmp[i],i);
+      code_snippet += create_row(AllEmp[i],i)
   
     var table = document.querySelector('#my_table')
     table.innerHTML = code_snippet 
@@ -48,6 +58,7 @@ function refresh_table(){
   }
   
   function onEnterUp(event) {
+    var people =[];
     if (event.code !== 'Enter') return;
     //var name_input = document.querySelector('input')
     alert('Hello');
@@ -64,9 +75,11 @@ function refresh_table(){
     people[2] = Job_input;
     people[3] = Salary_input;
    
-    alert(people.length);
+    //alert(people.length);
     AllEmp.push(people);
  
+    //alert(AllEmp.length);
+    //alert(AllEmp[0])
     FName_input.value = ""
     LName_input.value = ""
     Job_input.value = ""
