@@ -1,30 +1,14 @@
 var AllEmp = [];
 
-/* function populatetable(){
-    var code_snipper = ""
-    code_snipper += "<tr><td>Maria</td></tr>\n"
-    code_snipper += "<tr><td>Sharmin</td></tr>\n"
-    code_snipper += "<tr><td>Agbay</td></tr>\n"
-    code_snipper += "<tr><th>Hello</th><th>Pilipinas</th><th>Kong</th><th>Mahal</th></tr>\n"
-    code_snipper += "<tr></tr>\n"
-
-    //var table = document.getElementById('my_table')
-    var table = document.getElementsByTagName('table')[0]
-    table.innerHTML += code_snipper
-
-} */
 
 function create_row(empRecord,index) {
 
     var arrEmpRecord = [];
     arrEmpRecord =  empRecord;
-
-    //alert(arrEmpRecord[0]);
-    //alert(arrEmpRecord[1]);
-    
+  
     var row = ""
     row += "<tr id='" + index + "'>\n"
-    row += "<td onclick=index'remove_employee(" + index + ")'>❌</td>\n"
+    row += "<td onclick=index'remove_person(" + index + ")'><img src='/images/delete.jpg' alt='Delete' style='width:35px;height:30px;'></td>\n"
     //<img src='/images/delete.jpg' alt='Delete' style='width:35px;height:30px;'>
     row += "<td>" + arrEmpRecord[1] + "</td>\n"
     row += "<td>" + arrEmpRecord[2] + "</td>\n"
@@ -60,7 +44,7 @@ function refresh_table(){
   function onEnterUp(event) {
     var people =[];
     if (event.code !== 'Enter') return;
-    //var name_input = document.querySelector('input')
+    
     alert('Hello');
     var FName_input = document.getElementById("FName").value;
     var LName_input = document.getElementById("LName").value;
@@ -80,9 +64,14 @@ function refresh_table(){
  
     //alert(AllEmp.length);
     //alert(AllEmp[0])
-    FName_input.value = ""
-    LName_input.value = ""
-    Job_input.value = ""
-    Salary_input.value = ""
+    document.getElementById("Photo").value = ""
+    document.getElementById("FName").value = ""
+    document.getElementById("LName").value = ""
+    document.getElementById("Job").value = ""
+    document.getElementById("Salary").value = "" 
+    
     refresh_table()
+    document.getElementById("FName").focus();
+    //var allInput = document.querySelector("tr.txtInput")
+    //allInput.value = ""
   }
