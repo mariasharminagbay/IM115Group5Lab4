@@ -3,12 +3,17 @@ table,th,td{
     border-collapse: inherit;
 
     text-align: center;
+
 }
 
 table{
     width: 300px;
+    margin-left: 150px;
 }
 
+h2{
+    margin-left: 150px;
+}
 tr:hover td{
     background-color: grey;
 }
