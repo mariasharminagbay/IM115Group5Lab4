@@ -1,8 +1,8 @@
 table,th,td{
-    border: 1px solid black;
+    border: 1px solid rgb(73, 15, 15);
     border-collapse: collapse;
 
-    text-align: justify;
+    text-align: center;
 }
 
 table{

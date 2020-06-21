@@ -7,40 +7,40 @@ function create_row(empRecord,index) {
     arrEmpRecord =  empRecord;
 
     var imagepath="";
-    //alert(arrEmpRecord[2]);
-    if(arrEmpRecord[2]=='Doctor') {
+    // MSA: ADDED - additional condition which will consider the small and all caps for the Jo title
+    if(arrEmpRecord[2]=='Doctor' || arrEmpRecord[2]=='doctor' || arrEmpRecord[2]=='DOCTOR'){
         //alert("Doc")
         imagepath='/images/Doc.png' 
     }
-    else if(arrEmpRecord[2]=='IT') {
+    else if(arrEmpRecord[2]=='IT' || arrEmpRecord[2]=='It' || arrEmpRecord[2]=='it') {
         //alert("IT")
         imagepath='/images/IT_job.jpg'
     }
-    else if(arrEmpRecord[2]=='Lawyer') {
+    else if(arrEmpRecord[2]=='Lawyer' || arrEmpRecord[2]=='lawyer' ||arrEmpRecord[2]=='LAWYER') {
         //alert("IT")
         imagepath='/images/Lawyer.jpg'
     }
-    else if(arrEmpRecord[2]=='Teacher') {
+    else if(arrEmpRecord[2]=='Teacher' || arrEmpRecord[2]=='TEACHER' || arrEmpRecord[2]=='teacher') {
         //alert("IT")
         imagepath='/images/Teacher.jpg'
     }
-    else if(arrEmpRecord[2]=='Chef') {
+    else if(arrEmpRecord[2]=='Chef' || arrEmpRecord[2]=='CHEF' || arrEmpRecord[2]=='chef') {
         //alert("IT")
         imagepath='/images/Chef.jpg'
     }
-    else if(arrEmpRecord[2]=='Nurse') {
+    else if(arrEmpRecord[2]=='Nurse' || arrEmpRecord[2]=='nurse' || arrEmpRecord[2]=='NURSE') {
         //alert("IT")
         imagepath='/images/Nurse.jpg'
     }
-    else if(arrEmpRecord[2]=='Engineer') {
+    else if(arrEmpRecord[2]=='Engineer' || arrEmpRecord[2]=='engineer' || arrEmpRecord[2]=='ENGINEER') {
         //alert("IT")
         imagepath='/images/Engineer.jpg'
     }
-    else if(arrEmpRecord[2]=='Pilot') {
+    else if(arrEmpRecord[2]=='Pilot' || arrEmpRecord[2]=='pilot' || arrEmpRecord[2]=='PILOT') {
         //alert("IT")
         imagepath='/images/Pilot.jpg'
     }
-    else if(arrEmpRecord[2]=='Police') {
+    else if(arrEmpRecord[2]=='Police' || arrEmpRecord[2]=='police' || arrEmpRecord[2]=='POLICE') {
         //alert("IT")
         imagepath='/images/Police.jpg'
     }
