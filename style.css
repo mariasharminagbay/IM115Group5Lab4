@@ -1,16 +1,16 @@
 table,th,td{
-    border: 1px solid rgb(73, 15, 15);
-    border-collapse: collapse;
+    border: 2px solid rgb(73, 15, 15);
+    border-collapse: inherit;
 
     text-align: center;
 }
 
 table{
-    width: 400px;
+    width: 100px;
 }
 
 tr:hover td{
-    background-color: cornflowerblue;
+    background-color: grey;
 }
 
 a:visited{
@@ -20,4 +20,12 @@ a:visited{
 th{
     text-align: center;
     color: crimson;
+}
+
+body{
+    background-image: url("/images/images.jpg");
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
+    background-size: cover ;
+    background-position: center;
 }

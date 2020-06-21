@@ -7,48 +7,11 @@ function create_row(empRecord,index) {
     arrEmpRecord =  empRecord;
 
     var imagepath="";
+    //ISHARA : added condition with job options e.g. Chef; Engineer; Pilot; Police
     // MSA: ADDED - additional condition which will consider the small and all caps for the Jo title
-    if(arrEmpRecord[2]=='Doctor' || arrEmpRecord[2]=='doctor' || arrEmpRecord[2]=='DOCTOR'){
-        //alert("Doc")
-        imagepath='/images/Doc.png' 
-    }
-    else if(arrEmpRecord[2]=='IT' || arrEmpRecord[2]=='It' || arrEmpRecord[2]=='it') {
-        //alert("IT")
-        imagepath='/images/IT_job.jpg'
-    }
-    else if(arrEmpRecord[2]=='Lawyer' || arrEmpRecord[2]=='lawyer' ||arrEmpRecord[2]=='LAWYER') {
-        //alert("IT")
-        imagepath='/images/Lawyer.jpg'
-    }
-    else if(arrEmpRecord[2]=='Teacher' || arrEmpRecord[2]=='TEACHER' || arrEmpRecord[2]=='teacher') {
-        //alert("IT")
-        imagepath='/images/Teacher.jpg'
-    }
-    else if(arrEmpRecord[2]=='Chef' || arrEmpRecord[2]=='CHEF' || arrEmpRecord[2]=='chef') {
-        //alert("IT")
-        imagepath='/images/Chef.jpg'
-    }
-    else if(arrEmpRecord[2]=='Nurse' || arrEmpRecord[2]=='nurse' || arrEmpRecord[2]=='NURSE') {
-        //alert("IT")
-        imagepath='/images/Nurse.jpg'
-    }
-    else if(arrEmpRecord[2]=='Engineer' || arrEmpRecord[2]=='engineer' || arrEmpRecord[2]=='ENGINEER') {
-        //alert("IT")
-        imagepath='/images/Engineer.jpg'
-    }
-    else if(arrEmpRecord[2]=='Pilot' || arrEmpRecord[2]=='pilot' || arrEmpRecord[2]=='PILOT') {
-        //alert("IT")
-        imagepath='/images/Pilot.jpg'
-    }
-    else if(arrEmpRecord[2]=='Police' || arrEmpRecord[2]=='police' || arrEmpRecord[2]=='POLICE') {
-        //alert("IT")
-        imagepath='/images/Police.jpg'
-    }
-    
-    else {
-        imagepath='/images/smiley.png'
-    }
-  
+    //MSA: get first image path
+    imagepath = getEmpPhoto(arrEmpRecord[2])
+
     var row = ""
     row += "<tr id='" + index + "'>\n"
     row += "<td onclick='remove_person(" + index + ")'><img src='/images/delete.jpg' alt='Delete' style='width:35px;height:30px;'></td>\n"
@@ -57,20 +20,15 @@ function create_row(empRecord,index) {
     row += "<td>" + arrEmpRecord[1] + "</td>\n"
     row += "<td>" + arrEmpRecord[2] + "</td>\n"
     row += "<td>" + arrEmpRecord[3] + "</td>\n"
-
     row += "</tr>"
-    //alert(row)
     return row
 }
 
+
 function refresh_table(){
-    //alert('HellorefreshTable')  -- for testing
     var code_snippet = ""
 
-    //alert(AllEmp.length);
-    //alert(AllEmp[0])
     for(var i=0; i < AllEmp.length; i++)
-        //alert("for each person: " + AllEmp[i],i);  -- -- for testing
       code_snippet += create_row(AllEmp[i],i)
   
     var table = document.querySelector('#my_table')
@@ -86,25 +44,18 @@ function refresh_table(){
     var people =[];
     if (event.code !== 'Enter') return;
     
-    //alert('Hello'); -- for testing
     var FName_input = document.getElementById("FName").value;
     var LName_input = document.getElementById("LName").value;
     var Job_input = document.getElementById("Job").value;
     var Salary_input = document.getElementById("Salary").value;
     
-    //alert(FName_input);for testing
-    //alert(LName_input);for testing
-  
     people[0] = FName_input;
     people[1] = LName_input;
     people[2] = Job_input;
     people[3] = Salary_input;
    
-    //alert(people.length);
     AllEmp.push(people);
- 
-    //alert(AllEmp.length);
-    //alert(AllEmp[0])
+
     document.getElementById("Photo").value = ""
     document.getElementById("FName").value = ""
     document.getElementById("LName").value = ""
@@ -115,3 +66,48 @@ function refresh_table(){
     document.getElementById("FName").focus();
 
   }
+
+  function getEmpPhoto(EmpJob){
+    var path=""
+    if(EmpJob=='Doctor' || EmpJob=='doctor' || EmpJob=='DOCTOR'){
+        //alert("Doc")
+        return path='/images/Doc.png' 
+    }
+    else if(EmpJob=='IT' || EmpJob=='It' || EmpJob=='it') {
+        //alert("IT")
+        return path='/images/IT_job.jpg'
+    }
+    else if(EmpJob=='Lawyer' || EmpJob=='lawyer' ||EmpJob=='LAWYER') {
+        //alert("IT")
+        return path='/images/Lawyer.jpg'
+    }
+    else if(EmpJob=='Teacher' || EmpJob=='TEACHER' || EmpJob=='teacher') {
+        //alert("IT")
+        return path='/images/Teacher.jpg'
+    }
+    else if(EmpJob=='Chef' || EmpJob=='CHEF' || EmpJob=='chef') {
+        //alert("IT")
+        return path='/images/Chef.jpg'
+    }
+    else if(EmpJob=='Nurse' || EmpJob=='nurse' || EmpJob=='NURSE') {
+        //alert("IT")
+        return path='/images/Nurse.jpg'
+    }
+    else if(EmpJob=='Engineer' || EmpJob=='engineer' || EmpJob=='ENGINEER') {
+        //alert("IT")
+        return path='/images/Engineer.jpg'
+    }
+    else if(EmpJob=='Pilot' || EmpJob=='pilot' || EmpJob=='PILOT') {
+        //alert("IT")
+        return path='/images/Pilot.jpg'
+    }
+    else if(EmpJob=='Police' || EmpJob=='police' || EmpJob=='POLICE') {
+        //alert("IT")
+        return path='/images/Police.jpg'
+    }
+    
+    else {
+        return path='/images/smiley.png'
+    }
+  
+}
