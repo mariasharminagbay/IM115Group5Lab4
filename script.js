@@ -5,17 +5,16 @@ function onEnterUp(event) {
     var people =[];  // this will be used as an array of information for the row or the single information entered.
     if (event.code !== 'Enter') return;
 
-    // start populating the people array by getting the values through the ElementId
     people[0] = document.getElementById("FName").value;     //First Name
     people[1] = document.getElementById("LName").value;     //Last Name
     people[2] = document.getElementById("Job").value;       //Job Title
     people[3] = document.getElementById("Salary").value;    //Salary
    
-    AllEmp.push(people);  //After populating the people array, all the values will be inserted of pushed to the Employee's array to be consumed by the table.html
+    AllEmp.push(people);  
 
-    refresh_table() // this will call the method that will do the uopdate on the table
+    refresh_table() // this will call the method that will populate the table based on the records in All Emp array
 
-    //After populating the table with the new data, clear the text 
+    //clear the text 
     document.getElementById("Photo").value = ""
     document.getElementById("FName").value = ""
     document.getElementById("LName").value = ""
@@ -27,37 +26,38 @@ function onEnterUp(event) {
 
   
 function refresh_table(){
-    var code_snippet = ""  // this will be used as a temporary variable to store whatever html code  that will be created or generated at create_row function
+    // In this method, the table will be populated based on the records of AllEmp array with the help of create_row method.
+    var code_snippet = ""  
 
-    for(var i=0; i < AllEmp.length; i++)
-      code_snippet += create_row(AllEmp[i],i)
+    for(var i=0; i < AllEmp.length; i++)  // this for loop will iterate ont eh AllEmp array and passed all the records to create_row method
+      code_snippet += create_row(AllEmp[i],i)  
   
-    var table = document.querySelector('#my_table')
-    table.innerHTML = code_snippet 
+    var table = document.querySelector('#my_table')  
+    table.innerHTML = code_snippet   
+
 }
 
 function create_row(empRecord,index) {
+    // this methos accepts the parameters empRecord which represents the row in the AllEmp Record and index as the index of the that particular row in AllEmp array
+    var arrEmpRecord = [];  
+    arrEmpRecord =  empRecord;  /
 
-    var arrEmpRecord = [];
-    arrEmpRecord =  empRecord;
-
-    var imagepath="";
-    imagepath = getEmpPhoto(arrEmpRecord[2])
-
-    var row = ""
+    var imagepath="";  
+    imagepath = getEmpPhoto(arrEmpRecord[2])  // call the getEmpPhoto to get the image or logo path path;
+    var row = ""  // the variable row serves as a string variable where the generated html code are concatenated and will be stored.
     row += "<tr id='" + index + "'>\n"
     row += "<td onclick='remove_person(" + index + ")'><img src='/images/delete.jpg' alt='Delete' style='width:35px;height:30px;'></td>\n"
     row += "<td><img src='" + imagepath + "' alt='Position' style='width:35px;height:30px;'>"  + "</td>\n"
-    row += "<td>" + arrEmpRecord[0] + "</td>\n"
-    row += "<td>" + arrEmpRecord[1] + "</td>\n"
-    row += "<td>" + arrEmpRecord[2] + "</td>\n"
-    row += "<td>" + arrEmpRecord[3] + "</td>\n"
+    row += "<td>" + arrEmpRecord[0] + "</td>\n"  // FirstName
+    row += "<td>" + arrEmpRecord[1] + "</td>\n" //LastName 
+    row += "<td>" + arrEmpRecord[2] + "</td>\n" //Job Title that was selected
+    row += "<td>" + arrEmpRecord[3] + "</td>\n" //Salary
     row += "</tr>"
-    return row
+    return row  // return the value or the htmlcode generated
 }
 
 function remove_person(index){
-    AllEmp.splice(index, 1)
+    AllEmp.splice(index, 1)  // the splice method adds/removes items to/from an array and returns the removed items;
     refresh_table()
   }
 
