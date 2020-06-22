@@ -26,19 +26,26 @@
             <tbody id='my_table'></tbody>
             <tfoot>
                 <tr>
-                    <td><span>&#9997;</span></td>  <!--added  MSA - 0621 -->
+                    <td><span>&#9997;</span></td> 
                     <td width="20px"><input type="text" id="Photo" disabled></td>
                     <td><input type="text" id="FName" class='txtInput'></td>
                     <td><input type="text" id="LName" class='txtInput'></td>
-                    <td><input type="text" id="Job" class='txtInput'></td>
+                    <td>
+                        <select id="Job" name="Job">
+                            <option value="IT">IT</option>
+                            <option value="Police">Police</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Lawyer">Lawyer</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Chef">Chef</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Pilot">Pilot</option>
+                          </select>
+                    </td>
                     <td><input type="text" onkeyup="onEnterUp(event)" id="Salary" class='txtInput'></td>
                 </tr>
-                <select id="cars" name="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                  </select>
+
             </tfoot> 
         </table>
     </div>
