@@ -1,43 +1,40 @@
-var AllEmp = [];
+var AllEmp = []; // this variable will be used to store the all the people/employees that will be inputted in the table
 
 
 function onEnterUp(event) {
-    var people =[];
+    var people =[];  // this will be used as an array of information for the row or the single information entered.
     if (event.code !== 'Enter') return;
-    
-    var FName_input = document.getElementById("FName").value;
-    var LName_input = document.getElementById("LName").value;
-    var Job_input = document.getElementById("Job").value;
-    var Salary_input = document.getElementById("Salary").value;
-    
-    people[0] = FName_input;
-    people[1] = LName_input;
-    people[2] = Job_input;
-    people[3] = Salary_input;
-   
-    AllEmp.push(people);
 
+    // start populating the people array by getting the values through the ElementId
+    people[0] = document.getElementById("FName").value;     //First Name
+    people[1] = document.getElementById("LName").value;     //Last Name
+    people[2] = document.getElementById("Job").value;       //Job Title
+    people[3] = document.getElementById("Salary").value;    //Salary
+   
+    AllEmp.push(people);  //After populating the people array, all the values will be inserted of pushed to the Employee's array to be consumed by the table.html
+
+    refresh_table() // this will call the method that will do the uopdate on the table
+
+    //After populating the table with the new data, clear the text 
     document.getElementById("Photo").value = ""
     document.getElementById("FName").value = ""
     document.getElementById("LName").value = ""
-    document.getElementById("Job").value = ""
+    document.getElementById("Job").value = "IT"
     document.getElementById("Salary").value = "" 
-    
-    refresh_table()
     document.getElementById("FName").focus();
 
   }
 
   
 function refresh_table(){
-    var code_snippet = ""
+    var code_snippet = ""  // this will be used as a temporary variable to store whatever html code  that will be created or generated at create_row function
 
     for(var i=0; i < AllEmp.length; i++)
       code_snippet += create_row(AllEmp[i],i)
   
     var table = document.querySelector('#my_table')
     table.innerHTML = code_snippet 
-  }
+}
 
 function create_row(empRecord,index) {
 
@@ -67,7 +64,6 @@ function remove_person(index){
 function getEmpPhoto(EmpJob){
     var path=""
     if(EmpJob=='Doctor'){
-        //alert("Doc")
         return path='/images/Doc.png' 
     }
     else if(EmpJob=='IT') {
@@ -102,7 +98,6 @@ function getEmpPhoto(EmpJob){
         //alert("IT")
         return path='/images/Police.jpg'
     }
-    
     else {
         return path='/images/smiley.png'
     }
