@@ -41,7 +41,7 @@ function create_row(empRecord,index) {
     var arrEmpRecord = [];  
     arrEmpRecord =  empRecord;  
 
-    var imagepath="";  
+    var imagepath="";   
     imagepath = getEmpPhoto(arrEmpRecord[2])  // call the getEmpPhoto to get the image or logo path path;
     var row = ""  // the variable row serves as a string variable where the generated html code are concatenated and will be stored.
     row += "<tr id='" + index + "'>\n"
@@ -66,35 +66,27 @@ function getEmpPhoto(EmpJob){
         return path='/images/Doc.png' 
     }
     else if(EmpJob=='IT') {
-        //alert("IT")
-        return path='/images/IT_job.jpg'
+          return path='/images/IT_job.jpg'
     }
     else if(EmpJob=='Lawyer') {
-        //alert("IT")
-        return path='/images/Lawyer.jpg'
+        return path='/images/Lawyer.jpg' 
     }
     else if(EmpJob=='Teacher') {
-        //alert("IT")
         return path='/images/Teacher.jpg'
     }
     else if(EmpJob=='Chef') {
-        //alert("IT")
         return path='/images/Chef.jpg'
     }
     else if(EmpJob=='Nurse') {
-        //alert("IT")
-        return path='/images/Nurse.jpg'
+         return path='/images/Nurse.jpg'
     }
     else if(EmpJob=='Engineer') {
-        //alert("IT")
         return path='/images/Engineer.jpg'
     }
     else if(EmpJob=='Pilot') {
-        //alert("IT")
         return path='/images/Pilot.jpg'
     }
     else if(EmpJob=='Police') {
-        //alert("IT")
         return path='/images/Police.jpg'
     }
     else {
