@@ -24,7 +24,6 @@ function onEnterUp(event) {
 
   }
 
-  
 function refresh_table(){
     // In this method, the table will be populated based on the records of AllEmp array with the help of create_row method.
     var code_snippet = ""  
@@ -59,7 +58,7 @@ function create_row(empRecord,index) {
 function remove_person(index){
     AllEmp.splice(index, 1)  // the splice method adds/removes items to/from an array and returns the removed items;
     refresh_table()
-  }
+}
 
 function getEmpPhoto(EmpJob){
     var path=""
