@@ -66,8 +66,7 @@ p{
   font-family: Arial;
   font-size: 20px;
   text-align: center;
-  text-
-  color: blue;
+  color: black;
   /*
   align: center;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -78,13 +77,13 @@ pre {
   display: block;
   font-family: monospace;
   white-space: pre;
-  align: center;
+  box-align: center;
   font-size: 14px;
-  background
+  
 }
 
 h1 {
-    text-align: ;
+    text-align: center;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: Black;
