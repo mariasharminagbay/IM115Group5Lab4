@@ -1,19 +1,18 @@
 table,th,td{
     border: 2px solid rgb(73, 15, 15);
     border-collapse: inherit;
-
     text-align: center;
 
 }
 
 table{
-    align: center;
+    /*align: center; */
     width: 300px;
-    margin-left: 150px;
+    /*margin-left: 150px; */
 }
 
 h2{
-    margin-left: 150px;
+    text-align: center;
 }
 tr:hover td{
     background-color: grey;
@@ -28,17 +27,13 @@ th{
     color: crimson;
 }
 
-/*
-body{
-    background-image: url("/images/images.jpg");
-    background-repeat: no-repeat, repeat;
-    background-attachment: fixed;
-    background-size: cover ;
-    background-position: center;
-}
-*/
 body {
-  background-color: #ffe6e6;
+  /* background-color: #ffe6e6; */
+  background-image: url("/images/images.jpg");
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed;
+  background-size: cover ;
+  background-position: center;
 }
 
 table.indextable{
@@ -70,11 +65,13 @@ th {
 p{
   font-family: Arial;
   font-size: 20px;
-  align: center;
-  
-
+  text-align: center;
+  text-
   color: blue;
+  /*
+  align: center;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  */
 }
 
 pre {
@@ -87,9 +84,11 @@ pre {
 }
 
 h1 {
-  text-align: center;
-  color: Black;
-  text-shadow: 0 0 3px #9999ff;
+    text-align: ;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: Black;
+    text-shadow: 0 0 3px #9999ff;
 }
 
 
@@ -103,14 +102,17 @@ h2{
 } 
 
 
-.index-link {
-     margin-left: 200px;
-     word-spacing:.25em;
+.link {
+    
+    text-align: center;
+    /*
+      margin-left: 200px;
+     word-spacing:.25em; */
 }
 
 .table-link{
 	margin-left: 200px;
 	margin-top: 250px;
-     	word-spacing:.25em;
+    word-spacing:.25em;
 	
 }
