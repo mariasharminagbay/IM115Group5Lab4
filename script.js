@@ -40,7 +40,7 @@ function refresh_table(){
 function create_row(empRecord,index) {
     // this methos accepts the parameters empRecord which represents the row in the AllEmp Record and index as the index of the that particular row in AllEmp array
     var arrEmpRecord = [];  
-    arrEmpRecord =  empRecord;  /
+    arrEmpRecord =  empRecord;  
 
     var imagepath="";  
     imagepath = getEmpPhoto(arrEmpRecord[2])  // call the getEmpPhoto to get the image or logo path path;
